@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Machine List</title>
+</head>
+<body>
+    <h1>Machine List</h1>
+    <!-- TODO: Add list of concerts -->
+    <a href="/add-machines/">Add New Machine</a>
+    <!-- TODO: show delete link for each concert -->
+    <ul>
+        <li th:each="machine : ${machines}">
+            <a th:href="@{/delete-machine/{id}(id=${machine.id})}">Delete</a>
+            <span th:text="${machine.id}"></span>
+            <span th:text="${machine.status}"></span>
+            <span th:text="${machine.queue}"></span>
+            <span th:text="${machine.time}"></span>
+        </li>
+    </ul>
+</body>
+</html>
